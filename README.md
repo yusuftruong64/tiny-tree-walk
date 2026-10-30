@@ -54,3 +54,10 @@ complete snapshot than from lazy streaming.
 - The `prune` callable receives `(full_path, dir_names)` and returns the
   retained names. The entry's `dirs` list is the unfiltered truth; pruning only
   affects which children are recursed into.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
