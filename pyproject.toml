@@ -1,6 +1,6 @@
 [project]
 name = "tiny-tree-walk"
-version = "0.1.0"
+version = "0.1.1"
 description = "Depth-first directory traversal with pruning and stable ordering"
 requires-python = ">=3.10"
 dependencies = []
